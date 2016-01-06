@@ -1,0 +1,107 @@
+1.选择专业
+request[get]:
+http://m.kdzikao.com/exercise/select_major?uid=11522b347c65b9229ad3175fc7b93eb1
+check:
+response中，必需的key:provMajors；其value是一个列表，列表长度>=9
+
+2.获取科目摘要信息
+request[post]:
+path：http://m.kdzikao.com/exercise/subject_summary
+param:{"uid": "11522b347c65b9229ad3175fc7b93eb1", "subjectId": "0_01C1503_00633"}
+check：
+response中，必需的key:subjectState
+
+3.
+request[post]:
+path:http://m.kdzikao.com/exercise/select_subject
+param:{"major": {"majorName": "b", "majorId": "1_020202"}, "uid": "11522b347c65b9229ad3175fc7b93eb1"}
+check:
+必需的key:subject
+
+4.
+request[get]:
+http://m.kdzikao.com/exercise/get_major_subject?uid=11522b347c65b9229ad3175fc7b93eb1
+check:
+必需的key:major
+
+5.
+request[post]:
+path:http://m.kdzikao.com/exercise/subject_summary
+param:{"uid": "11522b347c65b9229ad3175fc7b93eb1", "subjectId": "0_01C1503_00633"}
+check:
+必需的key:
+subjectState
+
+6.
+request[post]:
+path:http://m.kdzikao.com/exercise/sequence_summary
+param:{"uid": "11522b347c65b9229ad3175fc7b93eb1", "subjectId": "0_01C1503_00633"}
+check:
+必需的key:
+chapterSummary
+
+7.
+request[post]:
+path:http://m.kdzikao.com/exercise/do_sequence_exercise
+param:{"userSubject": {"uid": "11522b347c65b9229ad3175fc7b93eb1", "subjectId": "0_01C1503_00633"}, "beginSection": {"id": "04-150701-09_1.1", "name": "c", "sn": "b"}}
+check:
+必需的key:
+exercises
+
+8.
+request[post]:
+path:http://m.kdzikao.com/exercise/do_smart_exercise
+param:{"userSubject": {"uid": "11522b347c65b9229ad3175fc7b93eb1", "subjectId": "0_01C1503_00633"}}
+check:
+必需的key:
+exercises
+
+9.
+request[post]:
+path:http://m.kdzikao.com/exercise/brush_rank
+param:{"userSubject": {"uid": "11522b347c65b9229ad3175fc7b93eb1", "subjectId": "0_01C1503_00633"}, "timeSpan": "BRUSH_RANK_TIME_SPAN_TODAY"}
+check:
+必需的key:
+userBrushSummary
+
+10.
+request[post]:
+path:http://m.kdzikao.com/exercise/kpoint_summary
+param:{"uid": "11522b347c65b9229ad3175fc7b93eb1", "subjectId": "0_01C1503_00633"}
+check:
+必需的key:
+chapterKpointSummary
+
+11.
+request[post]:
+path:http://m.kdzikao.com/exercise/section_kpoint_summary
+param:{"userSubject": {"uid": "11522b347c65b9229ad3175fc7b93eb1", "subjectId": "0_01C1503_00633"}, "section": {"id": "04-150701-09_1.1", "name": "3", "sn": "2"}}
+check:
+必需的key:
+kpointDetails
+
+12.
+request[post]:
+path:http://m.kdzikao.com/exercise/get_kpoint_exercise
+param:{"userSubject": {"uid": "11522b347c65b9229ad3175fc7b93eb1", "subjectId": "0_01C1503_00633"}, "kpointId": "04-150701-09_6.4.3"}
+check:
+必需的key:
+exercises
+
+13.
+request[post]:
+path:http://m.kdzikao.com/exercise/start_mock_exam
+param:{"userSubject": {"uid": "11522b347c65b9229ad3175fc7b93eb1", "subjectId": "0_01C1503_00633"}, "level": "HIGH"}
+check:
+必需的key:
+exerciseId
+
+14.
+request[post]:
+path:http://m.kdzikao.com/exercise/get_exercise_detail
+param:{"userSubject": {"uid": "11522b347c65b9229ad3175fc7b93eb1", "subjectId": "0_01C1503_00633"}, "brushType": "MOCK_EXAM", "exerciseId": ["04-150701-09_10109"]}
+check:
+必需的key:
+exercises
+
+
